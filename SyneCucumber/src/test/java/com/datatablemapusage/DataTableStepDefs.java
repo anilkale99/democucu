@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.utility.PropertiesOperation;
+
 import cucumber.api.DataTable;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -30,7 +32,9 @@ public class DataTableStepDefs {
 	@Given("^the user is on registration Page$")
 	public void the_user_is_on_registration_Page() throws InterruptedException {
 		System.out.println("actual script started");
-		driver.get("http://demo.automationtesting.in/Register.html");
+		PropertiesOperation prop = new PropertiesOperation();
+		String url = prop.getPropertyValue("hostURL");
+		driver.get(url);
 		Thread.sleep(5000);
 	}
 	
@@ -39,7 +43,6 @@ public class DataTableStepDefs {
 		//Initialize data table 
 	      List<List<String>> data = table.raw();
 	      System.out.println(data.get(0).get(0)); //print the table column Name OR first element
-	      
 	      //reading columns 2nd's values
 	      System.out.println(data.get(1).get(1));
 	      driver.findElement(By.xpath("//div/input[@placeholder='First Name']")).sendKeys(data.get(1).get(1));
