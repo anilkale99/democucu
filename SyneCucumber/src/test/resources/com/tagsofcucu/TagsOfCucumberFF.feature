@@ -1,5 +1,5 @@
 @Important
-Feature: Registration page4
+Feature: Registration page with tags
 As a new user, I want to enter firstname and lastname as a parameter
 
 Scenario: validate Registration Scenario1

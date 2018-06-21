@@ -1,4 +1,4 @@
-Feature: Registration page multi scenario3
+Feature: Registration page with sharing data
 As a new user, I want to enter firstname and lastname as a parameter
 
 Scenario: validate Registration Scenario2
